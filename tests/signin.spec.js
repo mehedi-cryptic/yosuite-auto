@@ -14,4 +14,8 @@ await page.goto("https://app.yosuite.net/signin");
 console.log(await page.title());
 await expect(page).toHaveTitle("Sign In");
 
+await page.locator("#email").type("tirakej174@besenica.com");
+await page.locator("#password").type("Mehedi@123");
+await page.locator("[type='submit']").click();
+
 } );
