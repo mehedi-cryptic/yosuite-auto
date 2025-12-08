@@ -19,7 +19,7 @@ await expect(page).toHaveTitle("Sign Up - YoSuite");
 //const baseEmail="testmehedi@mailinator.com";
 const uniqueShortId=Math.random().toString(36).substring(2,8);
 const timestamp=Date.now();
-const uniqueEmail=`mehedi${uniqueShortId}@mailinator.com`;
+const uniqueEmail=`mehedi${uniqueShortId}@inbox.testmail.app`;
 const uniqueSlug=`test${uniqueShortId}`
 
 const password="Mehedi@123";
@@ -43,6 +43,7 @@ await page.locator("[type='submit']").click();
 
 //await expect(page).toHaveURL("https://app.yosuite.net/verify?email=sdsd%40gmail.com");
 await expect(page).toHaveTitle("Verify Sign Up - YoSuite")
+await expect(page.getByText("Check your email")).toBeVisible();
 /*
 await page.locator("#email").type("tirakej174@besenica.com");
 await page.locator("#password").type("Mehedi@123");
