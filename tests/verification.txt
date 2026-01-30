@@ -1,0 +1,47 @@
+/*
+  // api key and verification process
+  const inboxTag = uniqueEmail.split("@")[0];
+  const API_KEY = process.env.TESTMAIL_API_KEY;
+  const NAMESPACE = process.env.TESTMAIL_NAMESPACE;
+
+  console.log("API KEY:", API_KEY);
+  console.log("Namespace:", NAMESPACE);
+  console.log("Inbox tag:",inboxTag);
+  
+  
+
+  let verifyUrl;
+
+  for (let i = 0; i < 10; i++) {
+    const url = `https://api.testmail.app/api/json?apikey=${API_KEY}&namespace=${NAMESPACE}&tag=${inboxTag}`;
+    
+    
+    const res = await axios.get(url);
+
+    if (res.data?.emails?.length > 0) {
+      const mail = res.data.emails[0];
+      const body = mail.html || mail.text;
+      const match = body.match(/https:\/\/app\.yosuite\.net\/verify[^\s"]+/);
+
+      if (match) {
+        verifyUrl = match[0];
+        break;
+      }
+    }
+
+    await new Promise(r => setTimeout(r, 5000));
+  }
+
+  if (!verifyUrl) throw new Error("Verification email not received");
+
+  console.log("Verify URL:", verifyUrl);
+
+  await page.goto(verifyUrl);
+  await expect(page).toHaveURL(/signin|login/);
+
+  await page.fill("#email", uniqueEmail);
+  await page.fill("#password", password);
+  await page.click("[type='submit']");
+
+  await expect(page).toHaveURL(/dashboard|home/); 
+  */

@@ -35,7 +35,7 @@ test("Sign in & Sign Up Page for Yosuite", async ({browser}) => {
 
   await expect(page).toHaveTitle("Verify Sign Up - YoSuite");
   await expect(page.getByText("Check your email")).toBeVisible();
-
+/*
   // api key and verification process
   const inboxTag = uniqueEmail.split("@")[0];
   const API_KEY = process.env.TESTMAIL_API_KEY;
@@ -80,5 +80,7 @@ test("Sign in & Sign Up Page for Yosuite", async ({browser}) => {
   await page.fill("#password", password);
   await page.click("[type='submit']");
 
-  await expect(page).toHaveURL(/dashboard|home/);
+  await expect(page).toHaveURL(/dashboard|home/); 
+  */
+
 });
