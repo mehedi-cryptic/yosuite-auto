@@ -16,15 +16,12 @@ class SignInPage {
 
   // Method to navigate to the sign-in page
   async navigateToSignIn() {
-    // Go to the sign-in URL
     await this.page.goto("https://app.yosuite.net/signin");
-    // Verify we're on the sign-in page by checking title
     await expect(this.page).toHaveTitle("Sign In");
   }
 
-  // Method to fill email field
+  //  fill email 
   async fillEmail(email) {
-    // Fill the email input with provided email
     await this.emailInput.fill(email);
   }
 
@@ -40,12 +37,7 @@ class SignInPage {
     await this.submitButton.click();
   }
 
-  // Method to verify successful login
-  /*async verifyLoginSuccess() {
-    // Check that URL contains either "dashboard" or "home"
-    // This regex /dashboard|home/ means "dashboard OR home"
-    await expect(this.page).toHaveURL();
-  } */
+  
 
   // Complete login flow - high-level method
   async login(email, password) {
@@ -57,8 +49,7 @@ class SignInPage {
     await this.fillPassword(password);
     // Click submit button
     await this.clickSubmit();
-    // Verify successful login
-    //await this.verifyLoginSuccess();
+  
   }
 }
 

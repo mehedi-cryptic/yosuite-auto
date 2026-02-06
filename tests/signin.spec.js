@@ -3,7 +3,7 @@ require('dotenv').config();
 // Import Playwright test functions
 const { test, expect } = require('@playwright/test');
 
-// Import the SignInPage class
+// Import the SignInPage 
 const SignInPage = require('../pages/SignInPage');
 
 // Define a test case for sign-in
@@ -22,12 +22,8 @@ test("User Sign In Flow", async ({browser}) => {
   const email = "kemonec347@lawior.com";
   const password = "Mehedi@123";
 
-  // Log the credentials being used
-  console.log("🔐 Logging in with:", email);
 
   // Execute the complete login flow
   await signInPage.login(email, password);
 
-  // Log success
-  console.log("✅ Successfully logged in!");
 });
