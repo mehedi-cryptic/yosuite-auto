@@ -4,11 +4,11 @@ const { expect } = require('@playwright/test');
 // Define the SignInPage class - represents the Sign In page
 class SignInPage {
   
-  // Constructor: initializes the page object with locators
+  // initializes the page object with locators
   constructor(page) {
-    this.page = page; // Store the Playwright page object
+    this.page = page; 
     
-    // Define locators for sign-in page elements
+    // locators for sign-in page elements
     this.emailInput = page.locator("#email");
     this.passwordInput = page.locator("#password");
     this.submitButton = page.locator("[type='submit']");

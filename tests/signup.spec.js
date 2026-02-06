@@ -20,16 +20,15 @@ test("sign up flow", async({browser}) => {
         password: process.env.TEST_PASSWORD 
     };
     
-    console.log("🎯 Using Email:", userData.email);
-    console.log("🎯 Using Slug:", userData.slug);
+    //console.log("🎯 Using Email:", userData.email);
+    //console.log("🎯 Using Slug:", userData.slug);
 
     // Execute the complete sign-up flow using the page object
     await signUpPage.signUp(userData); // ✅ Now matches the method name
 
-    // Log success message
-    console.log("✅ Sign up completed successfully!");
+    //console.log("✅ Sign up completed successfully!");
     
-    // Optional: Navigate back to sign-in page
+    //  Navigate back to sign-in page
     await page.goto("https://app.yosuite.net/signin");
     await expect(page).toHaveTitle("Sign In");
     console.log("✅ Navigated back to Sign In page");
