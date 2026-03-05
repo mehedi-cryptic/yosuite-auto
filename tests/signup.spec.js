@@ -25,9 +25,7 @@ test("sign up flow", async({browser}) => {
 
     // Execute the complete sign-up flow using the page object
     await signUpPage.signUp(userData); // ✅ Now matches the method name
-
-    //console.log("✅ Sign up completed successfully!");
-    
+ 
     //  Navigate back to sign-in page
     await page.goto("https://app.yosuite.net/signin");
     await expect(page).toHaveTitle("Sign In");
