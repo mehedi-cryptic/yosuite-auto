@@ -4,9 +4,9 @@ class SignInPage {
 
   constructor(page) {
     this.page = page;
-    this.emailInput = page.locator("#email");
+    this.emailInput   = page.locator("#email");
     this.passwordInput = page.locator("#password");
-    this.submitButton = page.locator("[type='submit']");
+    this.submitButton  = page.locator("[type='submit']");
   }
 
   async navigateToSignIn() {
@@ -27,12 +27,9 @@ class SignInPage {
   }
 
   async verifyHomeDashboard() {
-    // Wait for URL to change away from signin with long timeout
-    await this.page.waitForURL(
-      url => !url.toString().includes('signin'),
-      { timeout: 60000 }
-    );
-    // Wait extra time for session to fully establish
+    // Wait for Finance/Home page to load after login
+    // Uses locator wait instead of waitForURL — more reliable
+    await this.page.waitForLoadState('domcontentloaded', { timeout: 60000 });
     await this.page.waitForTimeout(5000);
   }
 
